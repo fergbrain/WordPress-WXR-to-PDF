@@ -1,0 +1,51 @@
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Copyright (C) 2024 Fergcorp, LLC
+
+For more information, please contact:
+Andrew Ferguson
+andrew@fergcorp.com
+
+
+Description:
+This program converts a WordPress WXR (WordPress eXtended RSS) file to a PDF document.
+It parses the WXR file to extract blog posts and pages, including their content,
+authors, publication dates, and comments. The extracted data is then formatted and
+written to a PDF file, which includes a title page, a table of contents, and the content
+of each post and page. The program can be run from the command line with the WXR file
+and output PDF file specified as arguments.
+
+Getting started:
+
+Contents of the wp-content/uploads folder needs to be in ./content
+You will need to download DejaVu font and put it in ./fonts: https://dejavu-fonts.github.io/
+
+
+# Create a virtual environment
+python -m venv env
+
+# Activate the virtual environment
+# On Windows
+.\env\Scripts\activate
+# On macOS and Linux
+source env/bin/activate
+
+# Install required packages
+pip install -r requirements.txt
+
+# Run the script
+python wxr-to-pdf.py -i path_to_wxr_file -o output_pdf_file
+
+# Deactivate the virtual environment when done
+deactivate
